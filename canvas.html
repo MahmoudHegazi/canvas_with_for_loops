@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<canvas id="myCanvas" width="1000" height="500" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML canvas tag.</canvas>
+
+<script>
+const c = document.getElementById("myCanvas");
+let ctx = c.getContext("2d");
+let circles = 50;
+
+
+
+for (let i = 0; i < circles; i++) {
+ctx.beginPath();
+ctx.arc(i * 10 ,10 * i,40,0,2*Math.PI);
+if (i % 2 === 0) {
+ctx.strokeStyle = "black";
+} else {
+ctx.strokeStyle = "yellow";
+}
+ctx.stroke();
+}
+
+for (let i = 0; i < circles; i++) {
+ctx.beginPath();
+ctx.arc(i * 20 ,20 * i,100,0,2*Math.PI);
+if (i % 2 === 0 && i !== 4 && i !== 10 && i !== 20) {
+ctx.strokeStyle = "#FF6F61";
+} else if (i % 2 === 1) {
+ctx.strokeStyle = "#6B5B95";
+} else {
+ctx.strokeStyle = "#88B04B";
+}
+ctx.stroke();
+}
+
+</script> 
+
+</body>
+</html>
