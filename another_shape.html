@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<canvas id="myCanvas" width="1000" height="500" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML canvas tag.</canvas>
+
+<button id="mystop" onclick="myStart()" style="display:none;">Start</button>
+<button onclick="myStopFunction()">Stop</button>
+<script>
+function draw() {
+
+const c = document.getElementById("myCanvas");
+let ctx = c.getContext("2d");
+let circles = 50;
+const colors = ['blue', 'red', 'orange', 'green', 'yellow', 'pink', 'lightblue', 'black'];
+
+
+
+
+for (let i = 0; i < circles; i++) {
+let  onecolor = Math.floor((Math.random() * 8));
+ctx.beginPath();
+ctx.arc(100 + i * 20 / 10 % 2,5 * i,100,0,2*Math.PI);
+if (i % 2 === 0 && i !== 4 && i !== 10 && i !== 20) {
+ctx.strokeStyle = colors[onecolor];
+} else if (i % 2 === 1) {
+ctx.strokeStyle = colors[onecolor];
+} else {
+ctx.strokeStyle = colors[onecolor];
+}
+ctx.stroke();
+}
+
+for (let i = 0; i < circles; i++) {
+let  onecolor = Math.floor((Math.random() * 8));
+ctx.beginPath();
+ctx.arc(100 + i * 20 / 10 % 2,5 * i,10,4 / i,2*Math.PI);
+if (i % 2 === 0 && i !== 4 && i !== 10 && i !== 20) {
+ctx.strokeStyle = colors[onecolor];
+} else if (i % 2 === 1) {
+ctx.strokeStyle = "green";
+} else {
+ctx.strokeStyle = "black";
+}
+ctx.stroke();
+}
+
+}
+
+
+let ind = 0;
+
+
+var myVar = setInterval(draw, 1000);
+function  myStart() {
+  myVar = setInterval(draw, 1000);
+}
+
+function myStopFunction() {
+clearInterval(myVar);
+ var getit = document.getElementById('mystop');
+ getit.style.display = "inline";
+}
+
+</script> 
+
+</body>
+</html>
