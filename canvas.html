@@ -5,7 +5,8 @@
 <canvas id="myCanvas" width="1000" height="500" style="border:1px solid #d3d3d3;">
 Your browser does not support the HTML canvas tag.</canvas>
 
-<button onclick="draw()">Click Alot</button>
+<button id="mystop" onclick="myStart()" style="display:none;">Start</button>
+<button onclick="myStopFunction()">Stop Alot</button>
 <script>
 function draw() {
 
@@ -42,7 +43,22 @@ ctx.stroke();
 }
 }
 
+let ind = 0;
+
+
+var myVar = setInterval(draw, 1000);
+function  myStart() {
+  myVar = setInterval(draw, 1000);
+}
+
+function myStopFunction() {
+clearInterval(myVar);
+ var getit = document.getElementById('mystop');
+ getit.style.display = "inline";
+}
+
 </script> 
 
 </body>
 </html>
+
