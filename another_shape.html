@@ -39,7 +39,7 @@ ctx.arc(100 + i * 20 / 10 % 2,5 * i,10,4 / i,2*Math.PI);
 if (i % 2 === 0 && i !== 4 && i !== 10 && i !== 20) {
 ctx.strokeStyle = colors[onecolor];
 } else if (i % 2 === 1) {
-ctx.strokeStyle = "green";
+ctx.strokeStyle = colors[onecolor];
 } else {
 ctx.strokeStyle = "black";
 }
@@ -67,3 +67,4 @@ clearInterval(myVar);
 
 </body>
 </html>
+
